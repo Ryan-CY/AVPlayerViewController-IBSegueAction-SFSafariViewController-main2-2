@@ -12,33 +12,34 @@ class IntroViewController: UIViewController {
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var directorLabel: UILabel!
-    @IBOutlet weak var IntroTextView: UITextView!
+    @IBOutlet weak var introTextView: UITextView!
     @IBOutlet weak var playButton: UIButton!
     //宣告兩個變數，分別把兩個自創的型別存入
-    var attractionIntro: Attraction!
-    var movieIntro: Movie!
+    var attractions: [Attraction]
+    var index: Int
+    
+    init?(coder: NSCoder, attractions: [Attraction], index: Int) {
+        self.attractions = attractions
+        self.index = index
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var website: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateUI()
+        title = attractions[index].name
+        photoImageView.image = UIImage(named:attractions[index].photo)
+        directorLabel.text = attractions[index].since
+        introTextView.text = attractions[index].intorduction
     }
     
-    func updateUI() {
-        //用optional binding判斷屬性有內容時要做的事
-        if let attractionIntro {
-            title = attractionIntro.name
-            photoImageView.image = UIImage(named: attractionIntro.photo)
-            directorLabel.text = attractionIntro.since
-            IntroTextView.text = attractionIntro.intorduction
-        }
-        if let movieIntro {
-            title = movieIntro.name
-            photoImageView.image = UIImage(named: movieIntro.photo)
-            directorLabel.text = movieIntro.director
-            IntroTextView.text = movieIntro.intorduction
-        }
-    }
+    
     
     @IBSegueAction func showVideo(_ coder: NSCoder) -> AVPlayerViewController? {
         let showVideoController = AVPlayerViewController(coder: coder)
@@ -72,25 +73,22 @@ class IntroViewController: UIViewController {
     
     @IBSegueAction func showWebsite(_ coder: NSCoder) -> SafariViewController? {
         
-        let safariController = SafariViewController(coder: coder)
         switch title {
         case "星耀樟怡":
-            //給safariController(coder: coder)的參數webSite內容
-            safariController?.webSite = "https://www.jewelchangiairport.com/"
+            website = "https://www.jewelchangiairport.com/"
         case "S.E.A. 海洋館":
-            safariController?.webSite = "https://www.pelago.co/en-SG/activity/pxelg-rws-sea-aquarium-ticket-singapore/?campaignid=17072198831&adgroupid=140538025180&adid=614838960392&gclid=Cj0KCQiAqOucBhDrARIsAPCQL1a3DD5zMAE9ra2--9qbH6rIYz14QxyH1dgNQurcU523fJuGzNMYENsaAndEEALw_wcB"
+            website = "https://www.pelago.co/en-SG/activity/pxelg-rws-sea-aquarium-ticket-singapore/?campaignid=17072198831&adgroupid=140538025180&adid=614838960392&gclid=Cj0KCQiAqOucBhDrARIsAPCQL1a3DD5zMAE9ra2--9qbH6rIYz14QxyH1dgNQurcU523fJuGzNMYENsaAndEEALw_wcB"
         case "新加坡植物園":
-            safariController?.webSite = "https://www.nparks.gov.sg/SBG"
+            website = "https://www.nparks.gov.sg/SBG"
         case "阿凡達：水之道":
-            safariController?.webSite = "https://www.avatar.com/"
+            website = "https://www.avatar.com/"
         case "花路阿朱媽":
-            safariController?.webSite = "https://www.harpersbazaar.com/tw/culture/filmandmusic/g42000475/ajoomma/"
+            website = "https://www.harpersbazaar.com/tw/culture/filmandmusic/g42000475/ajoomma/"
         case "憂鬱之島":
-            safariController?.webSite = "https://www.blueislandmovie.com/zh/%E4%B8%BB%E9%A0%81/"
+            website = "https://www.blueislandmovie.com/zh/%E4%B8%BB%E9%A0%81/"
         default:
             break
         }
-        return safariController
-        
+        return SafariViewController(coder: coder, webSite: website)
     }
 }

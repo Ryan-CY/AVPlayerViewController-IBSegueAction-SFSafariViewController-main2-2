@@ -367,8 +367,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="147-p2-zdn"/>
                     <connections>
-                        <outlet property="IntroTextView" destination="ef5-Xx-d7B" id="arC-El-bCM"/>
                         <outlet property="directorLabel" destination="GHj-fg-Vom" id="uMZ-RK-NqA"/>
+                        <outlet property="introTextView" destination="ef5-Xx-d7B" id="qHx-LJ-4fe"/>
                         <outlet property="photoImageView" destination="jOt-uo-Xvo" id="8Ss-Wi-BB4"/>
                         <outlet property="playButton" destination="Dfn-7e-hyp" id="4dj-t3-g5g"/>
                     </connections>

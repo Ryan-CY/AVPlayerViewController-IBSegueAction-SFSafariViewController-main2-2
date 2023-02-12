@@ -13,7 +13,6 @@
 		775521E1294AEE8D00907FC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775521DF294AEE8D00907FC1 /* Main.storyboard */; };
 		775521E3294AEE8E00907FC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775521E2294AEE8E00907FC1 /* Assets.xcassets */; };
 		775521E6294AEE8E00907FC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775521E4294AEE8E00907FC1 /* LaunchScreen.storyboard */; };
-		775521EE294AF26100907FC1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775521ED294AF26100907FC1 /* Movie.swift */; };
 		775521F0294AF30000907FC1 /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775521EF294AF30000907FC1 /* Attraction.swift */; };
 		775521F2294AF76900907FC1 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775521F1294AF76900907FC1 /* IntroViewController.swift */; };
 		775521F4294AF79B00907FC1 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 775521F3294AF79B00907FC1 /* ListTableViewController.swift */; };
@@ -34,7 +33,6 @@
 		775521E2294AEE8E00907FC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		775521E5294AEE8E00907FC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		775521E7294AEE8E00907FC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		775521ED294AF26100907FC1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		775521EF294AF30000907FC1 /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		775521F1294AF76900907FC1 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		775521F3294AF79B00907FC1 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		77552202294B142900907FC1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				775521ED294AF26100907FC1 /* Movie.swift */,
 				775521EF294AF30000907FC1 /* Attraction.swift */,
 				775521F7294B0B9D00907FC1 /* sea aquarium.mp4 */,
 				775521F5294B0B8700907FC1 /* jewel.mp4 */,
@@ -194,7 +191,6 @@
 				775521F0294AF30000907FC1 /* Attraction.swift in Sources */,
 				775521F2294AF76900907FC1 /* IntroViewController.swift in Sources */,
 				775521F4294AF79B00907FC1 /* ListTableViewController.swift in Sources */,
-				775521EE294AF26100907FC1 /* Movie.swift in Sources */,
 				775442052952C9C60073DCFC /* SafariViewController.swift in Sources */,
 				775521DC294AEE8D00907FC1 /* SceneDelegate.swift in Sources */,
 			);
