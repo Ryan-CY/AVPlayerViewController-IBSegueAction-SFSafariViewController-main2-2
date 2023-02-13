@@ -15,12 +15,10 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var introTextView: UITextView!
     @IBOutlet weak var playButton: UIButton!
     //宣告兩個變數，分別把兩個自創的型別存入
-    var attractions: [Attraction]
-    var index: Int
+    let attraction: Attraction
     
-    init?(coder: NSCoder, attractions: [Attraction], index: Int) {
-        self.attractions = attractions
-        self.index = index
+    init?(coder: NSCoder, attraction: Attraction) {
+        self.attraction = attraction
         super.init(coder: coder)
     }
     
@@ -33,13 +31,11 @@ class IntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = attractions[index].name
-        photoImageView.image = UIImage(named:attractions[index].photo)
-        directorLabel.text = attractions[index].since
-        introTextView.text = attractions[index].intorduction
+        title = attraction.name
+        photoImageView.image = UIImage(named:attraction.photo)
+        directorLabel.text = attraction.since
+        introTextView.text = attraction.intorduction
     }
-    
-    
     
     @IBSegueAction func showVideo(_ coder: NSCoder) -> AVPlayerViewController? {
         let showVideoController = AVPlayerViewController(coder: coder)
